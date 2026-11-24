@@ -84,6 +84,17 @@ On the author's original workstation, the 800 archived checkpoint MD5 checks pas
 
 The files in `src/` were replaced with the **original frozen `.R` files uploaded by the author**. Their original workstation MD5 hashes matched the supplied source-integrity and source-lock manifests before uploading. Text line endings were normalized during upload, so original byte hashes are not GitHub byte hashes. A fresh-clone author-run audit has now successfully regenerated all 800 scenario–replication runs and matched archived summaries within the prespecified tolerance.
 
+## Independent external replication — invitation open
+
+The complete 800-run numerical audit was **executed by the author**, not an outside researcher. A full third-party replication package is available:
+
+- [External replication protocol](documentation/INDEPENDENT_EXTERNAL_REPLICATION_PROTOCOL.md)
+- [Independent reviewer report template](documentation/EXTERNAL_REPLICATION_REPORT_TEMPLATE.md)
+- [Objective pass/fail checklist](documentation/EXTERNAL_REPLICATION_CHECKLIST.csv)
+- [Reserved external evidence directory](audits/external_replication/README.md)
+
+**External replication status: not yet completed or certified.** A prospective reviewer must independently clone a fixed Git commit, execute the seven statistical checks and all 800 frozen simulations, provide their own audit files, and explicitly approve the final report. The existing 800/800 author-run verification must not be misrepresented as third-party confirmation.
+
 ## Funding and competing interests
 
 The author reports **no funding** and **no competing interests**.
