@@ -23,7 +23,7 @@ The archived benchmark data and all four statistical reference tables are now in
 Rscript --vanilla scripts/REPRODUCE_GITHUB_ANALYSIS.R
 ```
 
-This new script compares the archived 800-run method-level, paired and regime statistical summaries with their independently recomputed values; it does **not** regenerate simulations. It has **not yet been executed from a fresh GitHub checkout**, so independent GitHub reproduction is still awaiting a successful clean-clone run. The historical `scripts/REPRODUCE_ANALYSIS.R` performs extra original-distribution checksum checks and is maintained as archival evidence.
+This new script compares the archived 800-run method-level, paired and regime statistical summaries with their independently recomputed values; it does **not** regenerate simulations. On 24 November 2026, the author executed it after a fresh GitHub clone on Windows: all seven reported checks passed, the largest numerical discrepancy was 5.329071e-14, and Rscript exited with status 0. See `audits/2026-11-24_fresh_clone_statistical_reproduction.md`. This was author-executed, not automated or cross-platform verification. The historical `scripts/REPRODUCE_ANALYSIS.R` performs extra original-distribution checksum checks and is maintained as archival evidence.
 
 ## Latest additions: archived reproduction audit
 
@@ -47,7 +47,7 @@ This new script compares the archived 800-run method-level, paired and regime st
 
 On the author's original workstation, the 800 archived checkpoint MD5 checks passed, statistical tables reproduced in a clean R session (maximum difference around 5.33e-14), and one frozen replication from each of the four scenarios was re-executed successfully in separate R processes. Those results were verified against the archived benchmark and do **not** mean the complete 800-run benchmark has been regenerated in a fresh clone.
 
-**This repository is not yet a validated standalone full-simulation reproduction package.** Frozen configuration, scenarios, seeds, archived benchmark metrics, subgroup results, and all four statistical reference summaries are present. The 800 original checkpoint RDS files and a verified clean-clone full-simulator driver are not included. The GitHub-layout statistical reproduction script still needs an independent clean-clone execution. Some original functions reference run-specific configuration constants. The plotting script is bound to the original workstation path, although its benchmark CSV inputs are now uploaded. Do not advertise the repository as fully executable or complete until those dependencies are added and tested.
+**This repository is not yet a validated standalone full-simulation reproduction package.** Frozen configuration, scenarios, seeds, archived benchmark metrics, subgroup results, and all four statistical reference summaries are present. The 800 original checkpoint RDS files and a verified clean-clone full-simulator driver are not included. The GitHub-layout statistical reproduction script passed an author-executed clean-clone test on Windows; an automated cross-platform validation and full simulation rerun are still outstanding. Some original functions reference run-specific configuration constants. The plotting script is bound to the original workstation path, although its benchmark CSV inputs are now uploaded. Do not advertise the repository as fully executable or complete until those dependencies are added and tested.
 
 ## Source provenance
 
