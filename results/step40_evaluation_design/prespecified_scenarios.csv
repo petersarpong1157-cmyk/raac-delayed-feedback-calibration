@@ -1,0 +1,5 @@
+scenario,description,baseline_sigma0,baseline_sigma1,peak_sigma1
+Stable,Outcome volatility remains stable,5,8,8
+Sudden_Volatility_Increase,Regime-1 volatility increases at evaluation start,5,8,12
+Gradual_Volatility_Increase,Regime-1 volatility increases progressively,5,8,12
+Volatility_Reversal,Regime-1 volatility rises then returns toward baseline,5,8,12
