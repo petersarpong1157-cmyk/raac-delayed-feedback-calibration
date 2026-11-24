@@ -8,7 +8,7 @@
   ],
   "title": "Release-Aware Adaptive Calibration Under Delayed Feedback: Prediction-Interval Efficiency and Conditional Coverage Across Volatility Regimes — Reproducible Research Code and Simulation Results",
   "description": "Versioned research software and archived numerical outputs for the RAAC synthetic prediction-interval calibration benchmark. Includes frozen R simulator source, simulation configuration and prespecified seeds, seven-method benchmark summaries over four volatility scenarios (200 replications each; 800 total), reproducible statistical analysis, and author-executed 800/800 numerical reproduction evidence. The manuscript and rendered figures are excluded. External third-party replication has not been completed.",
-  "version": "4.1.4",
+  "version": "4.1.5",
   "access_right": "open",
   "license": "mit",
   "upload_type": "software",
