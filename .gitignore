@@ -1,4 +1,4 @@
-# Do not commit manuscript drafts or figure outputs here
+# Manuscripts, rendered figures and editorial outputs excluded by author request
 manuscript/
 figures/
 *.pdf
@@ -8,7 +8,7 @@ figures/
 *.tex
 *.bib
 
-# R / RStudio transient files
+# R/RStudio temporary state
 .Rhistory
 .RData
 .Rproj.user/
@@ -16,12 +16,9 @@ figures/
 .Rprofile
 *.Rcheck/
 
-# Local / generated results are reviewed separately before release
-results/
-checkpoints/
-*.rds
-*.RDS
-*.zip
+# Generated test outputs (the archived results/ directory IS version-controlled)
+reproduction_outputs/
+results/**/checkpoints/
 *.log
 *.aux
 *.out
