@@ -23,12 +23,12 @@ Rscript --vanilla scripts/REPRODUCE_GITHUB_ANALYSIS.R
 
 This regenerates and compares method, paired contrast and subgroup summaries against the uploaded references, with a numerical tolerance of `1e-10`. It writes evidence to `reproduction_outputs/` (ignored by Git).
 
-**The new GitHub-layout script has not been run here.** The historical Step 67 log verifies a successful workstation run using the original 30-file distribution, not a tested fresh GitHub clone. Run the command in a fresh clone and retain the output log before claiming the GitHub layout passes.
+**The author successfully ran the GitHub-layout script from a fresh clone on Windows on 24 November 2026**, passing 7/7 checks. That evidence is documented in `audits/2026-11-24_fresh_clone_statistical_reproduction.md`. This does not regenerate the underlying 800 simulations.
 
 ## Remains to be done
 
-1. Execute the GitHub-layout script from an actual fresh checkout, confirm all checks pass and archive a new clean-session audit log.
-2. Provide a clean-clone simulator driver with source dependencies and verified ACI bounds, and independently rerun the four-scenario single-replication benchmark.
+1. Completed 24 November 2026: the author ran the GitHub-layout statistical script from a fresh clone (7/7 checks passed). See `audits/2026-11-24_fresh_clone_statistical_reproduction.md`.
+2. Completed 24 November 2026: a four-scenario, single-replication-per-scenario frozen simulator clean-clone test passed (5/5 checks). See `audits/2026-11-24_fresh_clone_simulator_verification.md`. A full 800-run rerun remains outstanding.
 3. Create a checksum manifest for the current public GitHub release (the historical 30-file manifest does **not** describe GitHub bytes).
 4. Optionally archive the 800 original checkpoint RDS files separately; only their MD5 manifest is on GitHub.
 5. Do not publish manuscript or figure artifacts here unless the author changes that instruction.
