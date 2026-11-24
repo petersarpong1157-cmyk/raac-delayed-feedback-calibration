@@ -1,0 +1,5 @@
+file,exists,md5
+benchmark_replication_function.R,TRUE,1b60944e4e04d9649b9bc8bd007bc249
+independent_replication_seeds.csv,TRUE,9e795f98d3ceb25895b94b601ec1e395
+protocol_amendment_1.md,TRUE,ec8c5b0bf5e692baf70968f38673a913
+benchmark_readiness.csv,TRUE,9a01aafae928fffaf5c2616ddd50b609
