@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use the RAAC code or its archived simulation results, please cite this software release."
 type: software
 title: "Release-Aware Adaptive Calibration Under Delayed Feedback: Prediction-Interval Efficiency and Conditional Coverage Across Volatility Regimes — Reproducible Research Code and Simulation Results"
-version: 4.1.4
+version: 4.1.5
 license: MIT
 repository-code: "https://github.com/petersarpong1157-cmyk/raac-delayed-feedback-calibration"
 url: "https://github.com/petersarpong1157-cmyk/raac-delayed-feedback-calibration"
@@ -19,3 +19,4 @@ keywords:
   - volatility regimes
   - simulation
 abstract: "Frozen R code, prespecified inputs, archived synthetic benchmark tables, and fully passing author-run 800-replication numerical reproduction evidence for Release-Aware Adaptive Calibration under delayed feedback. External third-party replication has not been performed."
+doi: "10.5281/zenodo.24514208"
