@@ -15,18 +15,28 @@ This repository collects research **code and reproducibility documentation** for
 
 RAAC improved mean interval score relative to Fixed Global by 2.26%–7.49%, but improved on Equal Weight by less than 0.07%. Fixed Conditional achieved lower mean score than RAAC in all four scenarios; Rolling Conditional led in the sudden-shift case. RAAC's Regime 1 coverage ranged from 72.02% to 84.44%, despite overall coverage of approximately 89.55%–90.50%. These are **simulation findings** without a distribution-free conditional-coverage guarantee or independent real-world validation.
 
+## Latest additions: archived reproduction audit
+
+- `scripts/REPRODUCE_ANALYSIS.R`: canonical, successfully tested Step 67 statistical reprocessing script. **Not currently runnable from this GitHub checkout**: requires the remaining original 30-file release tree and historical manifest checksums. Do not remove or bypass those checks simply to make it run.
+- `audits/`: Step 67 audit and clean-session logs. These document a run performed on the author's Windows workstation, **not a rerun from GitHub**.
+- `environment/`: R version and package versions recorded for the original workstation.
+- `documentation/HISTORICAL_30_FILE_MANIFEST.csv`: checksum manifest of the original 30-file release, **not** an inventory or checksum manifest of this GitHub repository.
+- `documentation/HOW_TO_REPRODUCE_ORIGINAL.md`: instructions that apply to the **complete original release**, once reconstructed.
+
 ## Repository structure
 
 - `src/`: function definitions **extracted from the frozen source-function documentation**. They are organized by original source filename; original frozen sources on the author's workstation remain the authority.
 - `scripts/`: the archived R plotting script. It needs the archived CSV benchmark outputs and currently uses workstation-specific paths; no PDF figures are uploaded here.
-- `documentation/`: technical methods and provenance notes.
+- `documentation/`: technical methods, original-release instructions, archived 30-file checksum manifest, and provenance notes.
+- `audits/`: original workstation reproduction logs and a Step 67 audit.
+- `environment/`: original R session and package versions.
 - `.gitignore`: excludes temporary R files, rendered figures, manuscript materials, and large checkpoint artifacts.
 
 ## Reproducibility: clearly separated claims
 
 On the author's original workstation, the 800 archived checkpoint MD5 checks passed, statistical tables reproduced in a clean R session (maximum difference around 5.33e-14), and one frozen replication from each of the four scenarios was re-executed successfully in separate R processes. Those results were verified against the archived benchmark and do **not** mean the complete 800-run benchmark has been regenerated in a fresh clone.
 
-**This repository is not yet a standalone full-reproduction package.** In particular, the frozen configuration RDS, scenario CSV, seed schedule, archived metrics and subgroups, checkpoint archive, full clean-session reproduction drivers, and the audited statistical reprocessing entry point have not been uploaded. Some extracted functions reference run-specific configuration constants. The plotting script expects absent archived CSV files. Do not advertise the repository as fully executable or complete until those dependencies are added and tested.
+**This repository is not yet a standalone full-reproduction package.** In particular, the frozen configuration RDS, scenario CSV, seed schedule, archived metrics and subgroups, checkpoint archive, full clean-session reproduction drivers, and the remaining input files required by the now-uploaded statistical reprocessing entry point have not been uploaded. Some extracted functions reference run-specific configuration constants. The plotting script expects absent archived CSV files. Do not advertise the repository as fully executable or complete until those dependencies are added and tested.
 
 ## Source provenance
 
