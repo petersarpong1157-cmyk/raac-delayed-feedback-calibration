@@ -1,6 +1,6 @@
 # Full 800-Run RAAC Simulator Audit
 
-**Current state:** Prepared but **not yet executed**. Do not claim that all 800 runs reproduced until the saved audit shows all 800 `passed == TRUE`.
+**Current state (24 November 2026): Author-run full audit PASSED (800/800, 0 unsuccessful attempts, exit status 0).** See `audits/2026-11-24_full_800_complete.md`. The uploaded console logs support this result; the local machine's CSV/MD5/session files have not yet been deposited in GitHub.
 
 ## Purpose
 
@@ -10,7 +10,7 @@ The earlier fresh-clone tests separately passed:
 - Archived statistical CSV reprocessing: 7/7 checks
 - Frozen simulator regeneration: replication 1 in each scenario (4/800): 5/5 checks
 
-The full 800-run verification is separate from those audits.
+The full 800-run verification was performed after those earlier audits and completed successfully on Windows. The commands below allow further replication or independent testing.
 
 ## Run on Windows (RStudio)
 
