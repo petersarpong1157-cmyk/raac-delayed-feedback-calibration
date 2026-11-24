@@ -1,0 +1,7 @@
+test,passed
+Canonical script matches tested version,TRUE
+Canonical script parses,TRUE
+Independent R process exits successfully,TRUE
+All eight statistical checks pass,TRUE
+Numerical errors below 1e-10,TRUE
+Reproduction instructions created,TRUE
