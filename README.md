@@ -35,6 +35,17 @@ Rscript --vanilla scripts/VERIFY_FROZEN_SIMULATOR.R
 
 **Status: author-executed fresh-clone run PASSED on Windows (24 November 2026).** Replication 1 was regenerated for each of four scenarios using seed 30261124, and all five checks passed with exit code 0. The largest numerical difference was 4.618528e-14. The test verifies four regenerated runs, **not all 800**. See [the audit record](audits/2026-11-24_fresh_clone_simulator_verification.md) and [instructions](documentation/HOW_TO_VERIFY_SIMULATOR.md).
 
+## Full 800-run simulator verification — prepared, not yet executed
+
+After the successful author-run 4-scenario (replication 1 only) simulator check, the next stage is a **resumable full 800-run audit**. It uses the original frozen functions, checks the same method-level and regime-level values for every scenario/replication, and records a durable pass/fail result after each run.
+
+```sh
+Rscript --vanilla scripts/VERIFY_ALL_800.R --batch=20
+Rscript --vanilla scripts/VERIFY_ALL_800.R --status
+```
+
+Repeat `--batch=20` to process additional runs or use `--all` to run the remaining schedule. **The 800-run script has not yet been executed** and no full-benchmark rerun is claimed. Refer to [full audit instructions](documentation/HOW_TO_VERIFY_ALL_800.md). It does not regenerate the historical checkpoint RDS files.
+
 ## Latest additions: archived reproduction audit
 
 - `scripts/REPRODUCE_ANALYSIS.R`: canonical, successfully tested Step 67 statistical reprocessing script. **Not currently runnable from this GitHub checkout**: requires the remaining original 30-file release tree and historical manifest checksums. Do not remove or bypass those checks simply to make it run.
