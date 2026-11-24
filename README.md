@@ -25,6 +25,16 @@ Rscript --vanilla scripts/REPRODUCE_GITHUB_ANALYSIS.R
 
 This new script compares the archived 800-run method-level, paired and regime statistical summaries with their independently recomputed values; it does **not** regenerate simulations. On 24 November 2026, the author executed it after a fresh GitHub clone on Windows: all seven reported checks passed, the largest numerical discrepancy was 5.329071e-14, and Rscript exited with status 0. See `audits/2026-11-24_fresh_clone_statistical_reproduction.md`. This was author-executed, not automated or cross-platform verification. The historical `scripts/REPRODUCE_ANALYSIS.R` performs extra original-distribution checksum checks and is maintained as archival evidence.
 
+## Frozen simulator verification (next test)
+
+A separate **four-scenario, single-replication-per-scenario** simulator comparison is now prepared at `scripts/VERIFY_FROZEN_SIMULATOR.R`. It re-generates four runs using the original frozen R functions, configuration and prespecified seeds, then compares 28 method-level rows and 56 subgroup rows with archived benchmark values.
+
+```sh
+Rscript --vanilla scripts/VERIFY_FROZEN_SIMULATOR.R
+```
+
+**Status: awaiting fresh-clone execution.** The author's prior passing 7/7 fresh-clone run verified CSV-level statistical reprocessing only. This new script has not yet been independently executed or certified. See [documentation/HOW_TO_VERIFY_SIMULATOR.md](documentation/HOW_TO_VERIFY_SIMULATOR.md).
+
 ## Latest additions: archived reproduction audit
 
 - `scripts/REPRODUCE_ANALYSIS.R`: canonical, successfully tested Step 67 statistical reprocessing script. **Not currently runnable from this GitHub checkout**: requires the remaining original 30-file release tree and historical manifest checksums. Do not remove or bypass those checks simply to make it run.
