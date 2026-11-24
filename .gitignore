@@ -1,0 +1,31 @@
+# Do not commit manuscript drafts or figure outputs here
+manuscript/
+figures/
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.tex
+*.bib
+
+# R / RStudio transient files
+.Rhistory
+.RData
+.Rproj.user/
+.Renviron
+.Rprofile
+*.Rcheck/
+
+# Local / generated results are reviewed separately before release
+results/
+checkpoints/
+*.rds
+*.RDS
+*.zip
+*.log
+*.aux
+*.out
+*.synctex.gz
+__pycache__/
+.DS_Store
+Thumbs.db
