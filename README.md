@@ -101,7 +101,13 @@ The author reports **no funding** and **no competing interests**.
 
 ## Licensing
 
-No reuse license has yet been granted. Open repository visibility does not itself grant an open-source license.
+**MIT License.** Copyright (c) 2026 Peter Sarpong. See [LICENSE](LICENSE). The license permits use, modification, redistribution and commercial use subject to preserving its copyright and permission notice; no warranty is supplied. Third-party materials, if any, retain their own rights.
+
+## GitHub release and Zenodo archive preparation
+
+**Prepared for initial release `v1.0.0`; not yet published as a GitHub Release and no Zenodo DOI has been assigned.** The repository includes [Zenodo metadata](.zenodo.json), [GitHub citation metadata](CITATION.cff), and [v1.0.0 release notes](documentation/RELEASE_NOTES_v1.0.0.md). The MIT license is included at [LICENSE](LICENSE).
+
+To archive this code snapshot with a DOI, connect your GitHub account to Zenodo, enable the repository in Zenodo's GitHub integration, then publish a GitHub Release `v1.0.0` with the prepared notes. Zenodo will archive the release if the integration is enabled and working. Add the assigned DOI here only after verifying the published Zenodo record. The manuscript and rendered figures are intentionally excluded.
 
 ## Publication
 
