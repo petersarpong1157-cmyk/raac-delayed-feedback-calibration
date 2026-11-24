@@ -137,15 +137,15 @@ if(!nrow(todo)) {
   quit(save="no",status=if(sum(!progress$passed)>0) 1L else 0L)
 }
 
-check_one <- function(scenario,replication,seed) {
-  run <- engine$benchmark_rep52(scenario_name=scenario,
-    replication_id=replication,engine=engine,config=config,
+check_one <- function(scenario_name,replication_id,seed) {
+  run <- engine$benchmark_rep52(scenario_name=scenario_name,
+    replication_id=replication_id,engine=engine,config=config,
     scenarios=scenarios,seeds=seeds,
     scoring_function=engine$evaluate_intervals49)
   obs <- run$summary
   groups <- run$subgroup
-  ref_m <- reference_metrics[scenario==..scenario & replication==..replication]
-  ref_g <- reference_groups[scenario==..scenario & replication==..replication]
+  ref_m <- reference_metrics[scenario==scenario_name & replication==replication_id]
+  ref_g <- reference_groups[scenario==scenario_name & replication==replication_id]
   key <- c("scenario","replication","method")
   if(nrow(obs)!=7L || nrow(groups)!=14L || nrow(ref_m)!=7L || nrow(ref_g)!=14L)
     stop("Expected seven method rows and fourteen regime rows")
