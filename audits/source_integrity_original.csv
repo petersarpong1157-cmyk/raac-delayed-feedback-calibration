@@ -1,0 +1,6 @@
+component,path,exists,md5
+RAAC engine,C:/Users/peter/Downloads/AI PREDICTION/RANF_AI_Research/results/step38_frozen_raac/RAAC_frozen_engine.R,TRUE,9519f87e2ce9376e3862af2f08a446d9
+Synthetic generator,C:/Users/peter/Downloads/AI PREDICTION/RANF_AI_Research/results/step41_generator/frozen_generator_function.R,TRUE,6926f414a5f52d522cc6c0b9f4a1ec57
+Point-forecast functions,C:/Users/peter/Downloads/AI PREDICTION/RANF_AI_Research/results/step42_point_forecast/point_forecast_functions.R,TRUE,6634d1baf7b7b955dfe14208408c9671
+Calibration experts,C:/Users/peter/Downloads/AI PREDICTION/RANF_AI_Research/results/step43_experts/expert_calibration_functions.R,TRUE,57cc4d3ba27ffe92de3130ed64f9ed82
+ACI comparator,C:/Users/peter/Downloads/AI PREDICTION/RANF_AI_Research/results/step45_aci_comparator/aci_comparator_functions.R,TRUE,8325b77ce596e08a82a90a7f81c65b99
