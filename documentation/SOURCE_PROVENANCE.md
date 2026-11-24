@@ -1,41 +1,45 @@
 # Source Provenance and Reproduction Scope
 
-## What is actually present
+## Original source files
 
-Eight files in `src/` contain 16 R function definitions recovered from the previously archived `exact_method_implementations.txt` extraction. Their original source filenames were:
+The eight `src/*.R` files currently on GitHub were replaced with **the corresponding original R files uploaded from the frozen study**, rather than the function-definitions reconstructed earlier.
 
-1. `frozen_generator_function.R`
-2. `point_forecast_functions.R`
-3. `expert_calibration_functions.R`
-4. `RAAC_frozen_engine.R`
-5. `aci_comparator_functions.R`
-6. `simulation_runner_function.R`
-7. `frozen_scoring_functions.R`
-8. `benchmark_replication_function.R`
+Original filenames:
+- `RAAC_frozen_engine.R`
+- `frozen_generator_function.R`
+- `point_forecast_functions.R`
+- `expert_calibration_functions.R`
+- `aci_comparator_functions.R`
+- `simulation_runner_function.R`
+- `frozen_scoring_functions.R`
+- `benchmark_replication_function.R`
 
-The added three-line comments identify their extraction provenance. They are not the same byte-for-byte files as the original frozen files, and the source package has **not** been revalidated from a fresh clone. Users should compare these definitions against the archived originals, and the original independent rerun evidence should not be treated as a test of the GitHub clone.
+On receipt, all eight original binary file MD5s matched the author's supplied `source_integrity.csv` or `execution_source_lock.csv`. The uploaded `aci_comparator_functions(1).R` had the same MD5 as `aci_comparator_functions.R`, so the duplicate was not uploaded.
 
-## External runtime configuration dependencies
+**Important distinction:** GitHub's text-file submission normalizes Windows CRLF line endings to LF. Therefore GitHub blob hashes and MD5 hashes need not match historical original Windows MD5, although the file content was sourced from the originals. The RDS frozen configuration was uploaded as an original binary blob, and its blob SHA was verified independently.
 
-Some functions expect values previously set by execution scripts: `alpha43`, `global_window43`, `regime_window43`, `expert_names43`, `experts37`, `qcols37`, `target_alpha45`, `gamma45`, `min_alpha45`, `max_alpha45`, `window45`, and `expected_methods`. The original ACI scripts verify `min_alpha45=0.02`, `max_alpha45=0.30`, `gamma45=0.01`, `target_alpha45=0.10`, and `window45=100`.
+## Added research evidence
 
-The immutable generator configuration RDS, actual scenario table, 800-run final seed table, results CSVs, and original execution drivers are still unavailable in this repository. The visualization script uses a hard-coded Windows workstation path.
+- Original frozen configuration: `results/step40_evaluation_design/frozen_simulation_configuration.rds`
+- Prespecified four-scenario specification: `results/step40_evaluation_design/prespecified_scenarios.csv`
+- Final 800-row independent seed schedule: `results/step52_final_benchmark/independent_replication_seeds.csv`
+- 5,600 method-level rows: `results/step54_independent_benchmark/all_replication_metrics.csv`
+- 11,200 regime-specific rows: `results/step54_independent_benchmark/all_replication_subgroups.csv`
+- 800 original checkpoint hashes, without the checkpoint binary files
+- Frozen source integrity records and the original seed amendment
 
-## Verified history on author's workstation
+## Runtime configuration dependencies
 
-- 800 checkpoint checksums previously matched.
-- Statistical summaries reran in a clean R process, maximum numerical difference approximately `5.33e-14`.
-- One benchmark replication for each scenario reran in four separate clean R processes and matched corresponding archived outputs.
-- A sudden-shift trajectory was separately recaptured with the frozen engine and audited against its original checkpoint.
+Source functions rely on execution-script variables such as `alpha43`, `global_window43`, `regime_window43`, `expert_names43`, `experts37`, `qcols37`, `target_alpha45`, `gamma45`, `min_alpha45`, `max_alpha45`, `window45`, and `expected_methods`. The ACI comparison uses `min_alpha45=0.02`, `max_alpha45=0.30`, `gamma45=0.01`, `target_alpha45=0.10`, and `window45=100`, verified from frozen execution scripts in the original study.
 
-The public repository has **not** independently rerun this verification.
+## Verification scope
 
-## Excluded by author request
+The author's original Windows workstation previously passed:
+- Checksums for 800 checkpoint RDS files
+- A clean-session statistical reprocessing audit with maximum numerical difference about 5.33e-14
+- One archived replication independently rerun for each of the four scenarios
+- An additional audited single-replication RAAC weight diagnostic rerun
 
-No manuscript, figures, rendered PDFs, or intermediate illustration exports are published here.
+The public GitHub checkout has **not** independently reproduced the benchmarks. The original comparative statistical summary reference CSVs, the full statistical release manifest for this new distribution, and the 800 checkpoint RDS files have not all been uploaded. Historic verification is evidence about the archived workstation study, not a verified clean GitHub checkout.
 
-## Future reproducibility milestones
-
-Upload and independently test the original benchmark configuration, scenario table, seed table, result tables, portable reproduction scripts and a complete release checksum manifest. Original 800 checkpoint files may be provided through a separate archival dataset release if necessary.
-
-No claim of a published journal article or confirmed DOI is made.
+No manuscript or figures are hosted, by author request.
