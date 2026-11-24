@@ -105,9 +105,9 @@ The author reports **no funding** and **no competing interests**.
 
 ## GitHub release and Zenodo archive preparation
 
-**Prepared for initial release `v4.1.4`; not yet published as a GitHub Release and no Zenodo DOI has been assigned.** The repository includes [Zenodo metadata](.zenodo.json), [GitHub citation metadata](CITATION.cff), and [v4.1.4 release notes](documentation/RELEASE_NOTES_v4.1.4.md). The MIT license is included at [LICENSE](LICENSE).
+**Published GitHub Release: [`v4.1.5`](https://github.com/petersarpong1157-cmyk/raac-delayed-feedback-calibration/releases/tag/v4.1.5), archived on Zenodo with DOI [`10.5281/zenodo.24514208`](https://doi.org/10.5281/zenodo.24514208).** The repository includes [Zenodo metadata](.zenodo.json), [GitHub citation metadata](CITATION.cff), and [historical v4.1.4 draft release notes](documentation/RELEASE_NOTES_v4.1.4.md). The MIT license is included at [LICENSE](LICENSE).
 
-To archive this code snapshot with a DOI, connect your GitHub account to Zenodo, enable the repository in Zenodo's GitHub integration, then publish a GitHub Release `v4.1.4` with the prepared notes. Zenodo will archive the release if the integration is enabled and working. Add the assigned DOI here only after verifying the published Zenodo record. The manuscript and rendered figures are intentionally excluded.
+Zenodo displays this GitHub snapshot as **v4.1.5**. **Citation warning:** the files *inside the tagged snapshot* still specify version **4.1.4** in `.zenodo.json` and `CITATION.cff` (the tag was created before the release-version metadata was adjusted). These metadata files have been corrected on `main` for future use, but the archived tag remains unchanged. Check the Zenodo record's displayed version and correct it using Zenodo metadata editing if needed. The MIT `LICENSE` is included in the released tag; verify the Zenodo record's displayed license. The manuscript and rendered figures remain excluded.
 
 ## Publication
 
