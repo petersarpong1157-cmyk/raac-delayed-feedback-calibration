@@ -44,7 +44,7 @@ Rscript --vanilla scripts/VERIFY_ALL_800.R --batch=20
 Rscript --vanilla scripts/VERIFY_ALL_800.R --status
 ```
 
-Repeat `--batch=20` to process additional runs or use `--all` to run the remaining schedule. **The 800-run script has not yet been executed** and no full-benchmark rerun is claimed. Refer to [full audit instructions](documentation/HOW_TO_VERIFY_ALL_800.md). It does not regenerate the historical checkpoint RDS files.
+Repeat `--batch=20` to process additional runs or use `--all` to run the remaining schedule. **Initial author-run batch passed: 20/800 (0 failures, 780 remaining) on 24 November 2026.** The full 800-run audit remains incomplete. See [the first-batch audit](audits/2026-11-24_full_800_initial_20_passed.md). Refer to [full audit instructions](documentation/HOW_TO_VERIFY_ALL_800.md). It does not regenerate the historical checkpoint RDS files.
 
 ## Latest additions: archived reproduction audit
 
