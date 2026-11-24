@@ -46,6 +46,16 @@ Rscript --vanilla scripts/VERIFY_ALL_800.R --status
 
 The script supports resumable batches and `--all`. **On 24 November 2026, the author's fresh-clone Windows rerun completed: 800/800 simulations passed, 0 unsuccessful attempts, 0 outstanding, and exit status 0.** See [the full 800-run audit](audits/2026-11-24_full_800_complete.md) and [reproduction instructions](documentation/HOW_TO_VERIFY_ALL_800.md). This verifies regenerated summary outputs numerically; it does not reconstruct the historical checkpoint RDS files.
 
+## Preserved full-audit evidence — 800/800 verified records
+
+The author has supplied the complete, original Windows audit artifacts. They are archived in [`audits/full_800_evidence/`](audits/full_800_evidence/) and independently checked at the CSV record level:
+
+- [800 replication results](audits/full_800_evidence/replication_checks.csv): 800 distinct scenario–replication keys; all passed; no missing/duplicate records, failures, or unverified seeds
+- [13-file input MD5 manifest](audits/full_800_evidence/input_md5.csv): locked input hashes recorded by the local run
+- [R session environment](audits/full_800_evidence/session_info.txt): R 4.5.2, Windows 11, data.table 1.18.6.1
+
+Across 800 records, maximum method error was **5.684342e-14** and maximum regime error **6.661338e-16**, both below `1e-10`. See the [detailed evidence review](audits/2026-11-24_full_800_detailed_evidence_review.md). These are author-run results (not third-party CI), and checkpoint RDS contents are not included.
+
 ## Latest additions: archived reproduction audit
 
 - `scripts/REPRODUCE_ANALYSIS.R`: canonical, successfully tested Step 67 statistical reprocessing script. **Not currently runnable from this GitHub checkout**: requires the remaining original 30-file release tree and historical manifest checksums. Do not remove or bypass those checks simply to make it run.
