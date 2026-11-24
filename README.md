@@ -15,6 +15,16 @@ This repository collects research **code and reproducibility documentation** for
 
 RAAC improved mean interval score relative to Fixed Global by 2.26%–7.49%, but improved on Equal Weight by less than 0.07%. Fixed Conditional achieved lower mean score than RAAC in all four scenarios; Rolling Conditional led in the sudden-shift case. RAAC's Regime 1 coverage ranged from 72.02% to 84.44%, despite overall coverage of approximately 89.55%–90.50%. These are **simulation findings** without a distribution-free conditional-coverage guarantee or independent real-world validation.
 
+## Statistical reprocessing from a GitHub checkout
+
+The archived benchmark data and all four statistical reference tables are now in the repository. With R and `data.table` installed, run:
+
+```sh
+Rscript --vanilla scripts/REPRODUCE_GITHUB_ANALYSIS.R
+```
+
+This new script compares the archived 800-run method-level, paired and regime statistical summaries with their independently recomputed values; it does **not** regenerate simulations. It has **not yet been executed from a fresh GitHub checkout**, so independent GitHub reproduction is still awaiting a successful clean-clone run. The historical `scripts/REPRODUCE_ANALYSIS.R` performs extra original-distribution checksum checks and is maintained as archival evidence.
+
 ## Latest additions: archived reproduction audit
 
 - `scripts/REPRODUCE_ANALYSIS.R`: canonical, successfully tested Step 67 statistical reprocessing script. **Not currently runnable from this GitHub checkout**: requires the remaining original 30-file release tree and historical manifest checksums. Do not remove or bypass those checks simply to make it run.
@@ -26,18 +36,18 @@ RAAC improved mean interval score relative to Fixed Global by 2.26%–7.49%, but
 ## Repository structure
 
 - `src/`: the eight original R source files supplied by the author (line endings normalized during GitHub upload), replacing earlier recovered function extracts.
-- `scripts/`: the historical Step 67 statistical reproduction script and the research visualization script. The latter retains a workstation-specific path, and no figures are included.
+- `scripts/`: original Step 67 historical reproduction script, a new GitHub-layout statistical reprocessing entry point, and the research visualization script (the latter retains a workstation-specific path; no figures are included).
 - `documentation/`: technical methods, protocol amendment, original-release instructions, historical checksum records, and provenance notes.
 - `audits/`: original workstation reproduction logs and a Step 67 audit.
 - `environment/`: original R session and package versions.
-- `results/`: the frozen binary configuration, scenario definitions, 800-seed schedule, both complete 800-run benchmark CSVs, and the original checkpoint checksum manifest.
+- `results/`: frozen binary configuration, scenarios, 800-seed schedule, both complete benchmark CSVs, the reference summary tables, paired replication records and checkpoint checksum manifest.
 - `.gitignore`: excludes temporary R files, rendered figures, manuscript materials, and large checkpoint artifacts.
 
 ## Reproducibility: clearly separated claims
 
 On the author's original workstation, the 800 archived checkpoint MD5 checks passed, statistical tables reproduced in a clean R session (maximum difference around 5.33e-14), and one frozen replication from each of the four scenarios was re-executed successfully in separate R processes. Those results were verified against the archived benchmark and do **not** mean the complete 800-run benchmark has been regenerated in a fresh clone.
 
-**This repository is not yet a validated standalone full-reproduction package.** The frozen configuration RDS, scenario CSV, seed schedule, archived metrics and subgroups are now present. However, the reference summary tables required by the Step 67 statistical audit, the original 800 checkpoint RDS files, and a tested clean-clone simulator reproduction entry point are still missing. Some original functions reference run-specific configuration constants. The plotting script is bound to the original workstation path, although its benchmark CSV inputs are now uploaded. Do not advertise the repository as fully executable or complete until those dependencies are added and tested.
+**This repository is not yet a validated standalone full-simulation reproduction package.** Frozen configuration, scenarios, seeds, archived benchmark metrics, subgroup results, and all four statistical reference summaries are present. The 800 original checkpoint RDS files and a verified clean-clone full-simulator driver are not included. The GitHub-layout statistical reproduction script still needs an independent clean-clone execution. Some original functions reference run-specific configuration constants. The plotting script is bound to the original workstation path, although its benchmark CSV inputs are now uploaded. Do not advertise the repository as fully executable or complete until those dependencies are added and tested.
 
 ## Source provenance
 
