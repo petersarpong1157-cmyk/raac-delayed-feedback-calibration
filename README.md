@@ -35,16 +35,16 @@ Rscript --vanilla scripts/VERIFY_FROZEN_SIMULATOR.R
 
 **Status: author-executed fresh-clone run PASSED on Windows (24 November 2026).** Replication 1 was regenerated for each of four scenarios using seed 30261124, and all five checks passed with exit code 0. The largest numerical difference was 4.618528e-14. The test verifies four regenerated runs, **not all 800**. See [the audit record](audits/2026-11-24_fresh_clone_simulator_verification.md) and [instructions](documentation/HOW_TO_VERIFY_SIMULATOR.md).
 
-## Full 800-run simulator verification — prepared, not yet executed
+## Full 800-run simulator verification — PASSED (author-run)
 
-After the successful author-run 4-scenario (replication 1 only) simulator check, the next stage is a **resumable full 800-run audit**. It uses the original frozen functions, checks the same method-level and regime-level values for every scenario/replication, and records a durable pass/fail result after each run.
+Following the successful four-scenario check, the author completed a **resumable full 800-run audit**. It uses the original frozen functions, checks the same method-level and regime-level values for every scenario/replication, and records a durable pass/fail result after each run.
 
 ```sh
 Rscript --vanilla scripts/VERIFY_ALL_800.R --batch=20
 Rscript --vanilla scripts/VERIFY_ALL_800.R --status
 ```
 
-Repeat `--batch=20` to process additional runs or use `--all` to run the remaining schedule. **Author-run progress: 560/800 passed (0 unsuccessful attempts, 240 remaining) on 24 November 2026.** The full 800-run audit remains incomplete. See [the 560-run audit](audits/2026-11-24_full_800_560_passed.md). Refer to [full audit instructions](documentation/HOW_TO_VERIFY_ALL_800.md). It does not regenerate the historical checkpoint RDS files.
+The script supports resumable batches and `--all`. **On 24 November 2026, the author's fresh-clone Windows rerun completed: 800/800 simulations passed, 0 unsuccessful attempts, 0 outstanding, and exit status 0.** See [the full 800-run audit](audits/2026-11-24_full_800_complete.md) and [reproduction instructions](documentation/HOW_TO_VERIFY_ALL_800.md). This verifies regenerated summary outputs numerically; it does not reconstruct the historical checkpoint RDS files.
 
 ## Latest additions: archived reproduction audit
 
@@ -66,13 +66,13 @@ Repeat `--batch=20` to process additional runs or use `--all` to run the remaini
 
 ## Reproducibility: clearly separated claims
 
-On the author's original workstation, the 800 archived checkpoint MD5 checks passed, statistical tables reproduced in a clean R session (maximum difference around 5.33e-14), and one frozen replication from each of the four scenarios was re-executed successfully in separate R processes. Those results were verified against the archived benchmark and do **not** mean the complete 800-run benchmark has been regenerated in a fresh clone.
+On the author's original workstation, the 800 archived checkpoint MD5 checks passed, statistical tables reproduced in a clean R session (maximum difference around 5.33e-14), and one frozen replication from each of the four scenarios was re-executed successfully in separate R processes. These historical checks preceded the subsequently completed author-executed fresh-clone reproduction of all 800 scenario–replication runs.
 
-**This repository is not yet a validated standalone full-simulation reproduction package.** Frozen configuration, scenarios, seeds, archived benchmark metrics, subgroup results, and all four statistical reference summaries are present. The 800 original checkpoint RDS files and a clean-clone driver that regenerates **all** 800 simulation runs are not included. Both the GitHub-layout statistical reprocessing and four-scenario (one replication each) frozen simulator verification passed author-executed fresh-clone tests on Windows; automated cross-platform validation and a full 800-run rerun remain outstanding. Some original functions reference run-specific configuration constants. The plotting script is bound to the original workstation path, although its benchmark CSV inputs are now uploaded. Do not advertise the repository as fully executable or complete until those dependencies are added and tested.
+**The repository supports author-tested standalone numerical regeneration of the full 800-run synthetic benchmark on Windows.** The frozen configuration, scenarios, seeds, archived benchmark metrics, subgroup results, and statistical reference summaries are present. The author successfully ran `scripts/VERIFY_ALL_800.R` from a fresh GitHub checkout (800/800 passed). The 800 original checkpoint RDS files are not included; binary checkpoint equality, automated cross-platform validation and third-party independent replication have not been established. Some original functions reference run-specific configuration constants. The plotting script is bound to the original workstation path, although its benchmark CSV inputs are now uploaded. The frozen simulator audit and statistical reprocessing entry points have been tested by the author from a fresh checkout; unrelated historical scripts and figure generation may still require original workstation-specific dependencies.
 
 ## Source provenance
 
-The files in `src/` were replaced with the **original frozen `.R` files uploaded by the author**. Their original workstation MD5 hashes matched the supplied source-integrity and source-lock manifests before uploading. Text line endings were normalized during upload, so original byte hashes are not GitHub byte hashes. A fresh-clone test has now verified four regenerated scenario-replication runs; full 800-run reproduction remains untested.
+The files in `src/` were replaced with the **original frozen `.R` files uploaded by the author**. Their original workstation MD5 hashes matched the supplied source-integrity and source-lock manifests before uploading. Text line endings were normalized during upload, so original byte hashes are not GitHub byte hashes. A fresh-clone author-run audit has now successfully regenerated all 800 scenario–replication runs and matched archived summaries within the prespecified tolerance.
 
 ## Funding and competing interests
 
