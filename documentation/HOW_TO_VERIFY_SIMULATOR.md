@@ -44,4 +44,4 @@ A passing run reports five `TRUE` rows, numerical differences below `1e-10` and 
 
 ## Status as of 24 November 2026
 
-**Prepared, not yet executed on a fresh GitHub clone.** The previous 7/7 clean-clone success applies to archived **statistical CSV reprocessing**, not this frozen simulator rerun. Update this statement after a successful user-provided console log.
+**Author-run verification passed on 24 November 2026.** A fresh GitHub clone on Windows regenerated one final-seed replication in each of four scenarios. All five checks passed, maximum absolute difference 4.618528e-14, and Rscript exited with status 0. See `audits/2026-11-24_fresh_clone_simulator_verification.md`. This is distinct from the earlier successful 7/7 CSV-level statistics test and is not an 800-run simulation rerun.
