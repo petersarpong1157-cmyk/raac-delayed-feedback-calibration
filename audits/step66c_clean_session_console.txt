@@ -1,0 +1,31 @@
+
+====================================
+RANF STEP 66 — CLEAN SESSION AUDIT
+====================================
+
+PACKAGE DIRECTORY:
+[1] "C:/Users/peter/Downloads/AI PREDICTION/RANF_AI_Research/results/step65_portable_release/RAAC_Research_Release"
+
+NUMERICAL REPRODUCTION ERRORS:
+                comparison maximum_absolute_error
+                    <char>                  <num>
+1:          method_summary           5.329071e-14
+2:       primary_contrasts           3.996803e-15
+3:     secondary_contrasts           4.440892e-15
+4:          regime_summary           5.551115e-16
+5: coverage_reconstruction           1.110223e-15
+
+CLEAN-SESSION AUDIT:
+                                      test passed
+                                    <char> <lgcl>
+1: All 30 release files match manifest MD5   TRUE
+2:    Benchmark summary dimensions correct   TRUE
+3:           Seven-method table reproduced   TRUE
+4:     Primary paired contrasts reproduced   TRUE
+5:   Secondary paired contrasts reproduced   TRUE
+6:      Regime coverage summary reproduced   TRUE
+7:               Subgroup counts reconcile   TRUE
+8:            Subgroup coverage reconciles   TRUE
+
+PASS: Archived statistical tables reproduced.
+No simulations or model fitting performed.
