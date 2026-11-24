@@ -3,7 +3,6 @@ message: "If you use the RAAC code or its archived simulation results, please ci
 type: software
 title: "Release-Aware Adaptive Calibration Under Delayed Feedback: Prediction-Interval Efficiency and Conditional Coverage Across Volatility Regimes — Reproducible Research Code and Simulation Results"
 version: 1.0.0
-date-released: 2026-11-24
 license: MIT
 repository-code: "https://github.com/petersarpong1157-cmyk/raac-delayed-feedback-calibration"
 url: "https://github.com/petersarpong1157-cmyk/raac-delayed-feedback-calibration"
