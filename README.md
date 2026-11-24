@@ -25,7 +25,7 @@ Rscript --vanilla scripts/REPRODUCE_GITHUB_ANALYSIS.R
 
 This new script compares the archived 800-run method-level, paired and regime statistical summaries with their independently recomputed values; it does **not** regenerate simulations. On 24 November 2026, the author executed it after a fresh GitHub clone on Windows: all seven reported checks passed, the largest numerical discrepancy was 5.329071e-14, and Rscript exited with status 0. See `audits/2026-11-24_fresh_clone_statistical_reproduction.md`. This was author-executed, not automated or cross-platform verification. The historical `scripts/REPRODUCE_ANALYSIS.R` performs extra original-distribution checksum checks and is maintained as archival evidence.
 
-## Frozen simulator verification (next test)
+## Frozen simulator verification — 4/4 scenarios passed
 
 A separate **four-scenario, single-replication-per-scenario** simulator comparison is now prepared at `scripts/VERIFY_FROZEN_SIMULATOR.R`. It re-generates four runs using the original frozen R functions, configuration and prespecified seeds, then compares 28 method-level rows and 56 subgroup rows with archived benchmark values.
 
@@ -33,7 +33,7 @@ A separate **four-scenario, single-replication-per-scenario** simulator comparis
 Rscript --vanilla scripts/VERIFY_FROZEN_SIMULATOR.R
 ```
 
-**Status: awaiting fresh-clone execution.** The author's prior passing 7/7 fresh-clone run verified CSV-level statistical reprocessing only. This new script has not yet been independently executed or certified. See [documentation/HOW_TO_VERIFY_SIMULATOR.md](documentation/HOW_TO_VERIFY_SIMULATOR.md).
+**Status: author-executed fresh-clone run PASSED on Windows (24 November 2026).** Replication 1 was regenerated for each of four scenarios using seed 30261124, and all five checks passed with exit code 0. The largest numerical difference was 4.618528e-14. The test verifies four regenerated runs, **not all 800**. See [the audit record](audits/2026-11-24_fresh_clone_simulator_verification.md) and [instructions](documentation/HOW_TO_VERIFY_SIMULATOR.md).
 
 ## Latest additions: archived reproduction audit
 
@@ -57,11 +57,11 @@ Rscript --vanilla scripts/VERIFY_FROZEN_SIMULATOR.R
 
 On the author's original workstation, the 800 archived checkpoint MD5 checks passed, statistical tables reproduced in a clean R session (maximum difference around 5.33e-14), and one frozen replication from each of the four scenarios was re-executed successfully in separate R processes. Those results were verified against the archived benchmark and do **not** mean the complete 800-run benchmark has been regenerated in a fresh clone.
 
-**This repository is not yet a validated standalone full-simulation reproduction package.** Frozen configuration, scenarios, seeds, archived benchmark metrics, subgroup results, and all four statistical reference summaries are present. The 800 original checkpoint RDS files and a verified clean-clone full-simulator driver are not included. The GitHub-layout statistical reproduction script passed an author-executed clean-clone test on Windows; an automated cross-platform validation and full simulation rerun are still outstanding. Some original functions reference run-specific configuration constants. The plotting script is bound to the original workstation path, although its benchmark CSV inputs are now uploaded. Do not advertise the repository as fully executable or complete until those dependencies are added and tested.
+**This repository is not yet a validated standalone full-simulation reproduction package.** Frozen configuration, scenarios, seeds, archived benchmark metrics, subgroup results, and all four statistical reference summaries are present. The 800 original checkpoint RDS files and a clean-clone driver that regenerates **all** 800 simulation runs are not included. Both the GitHub-layout statistical reprocessing and four-scenario (one replication each) frozen simulator verification passed author-executed fresh-clone tests on Windows; automated cross-platform validation and a full 800-run rerun remain outstanding. Some original functions reference run-specific configuration constants. The plotting script is bound to the original workstation path, although its benchmark CSV inputs are now uploaded. Do not advertise the repository as fully executable or complete until those dependencies are added and tested.
 
 ## Source provenance
 
-The files in `src/` were replaced with the **original frozen `.R` files uploaded by the author**. Their original workstation MD5 hashes matched the supplied source-integrity and source-lock manifests before uploading. Text line endings were normalized during upload, so original byte hashes are not GitHub byte hashes. Reproduction from a fresh clone still needs verification.
+The files in `src/` were replaced with the **original frozen `.R` files uploaded by the author**. Their original workstation MD5 hashes matched the supplied source-integrity and source-lock manifests before uploading. Text line endings were normalized during upload, so original byte hashes are not GitHub byte hashes. A fresh-clone test has now verified four regenerated scenario-replication runs; full 800-run reproduction remains untested.
 
 ## Funding and competing interests
 
