@@ -1,38 +1,36 @@
-# Remaining Computational Archive Files
+# Remaining Computational Reproduction Work
 
-**Updated 24 November 2026.** This inventory identifies files needed beyond what is currently hosted in GitHub. Manuscript and figures remain intentionally excluded.
+**Updated 24 November 2026.** The complete four-scenario benchmark CSVs and four original statistical reference tables are now published in this repository. Manuscript and figures remain intentionally excluded.
 
-## Now available in GitHub
+## Present and published
 
-- Eight original uploaded R source files under `src/`, replacing reconstructed extracts (text normalized to LF during upload)
-- Frozen configuration RDS and prespecified scenario CSV
-- Independent 800-row seed schedule and protocol amendment
-- 5,600-row method-level metrics and 11,200-row subgroup metrics
-- 800-row checkpoint MD5 manifest (the checkpoint RDS files themselves are not included)
-- Original source integrity/lock and Step 52 audit records
-- Verified historical `scripts/REPRODUCE_ANALYSIS.R` and audit logs
+- Eight original frozen R source files under `src/`
+- Original configuration RDS, scenario definitions and 800-row seed schedule
+- 5,600 archived method-level observations and 11,200 subgroup records
+- Four reference statistical tables: `seven_method_summary.csv`, `primary_raac_vs_fixed_global.csv`, `secondary_raac_comparisons.csv` and `regime_method_summary.csv`
+- Paired replication differences, scenario method rankings, RAAC regime coverage and supporting summary tables
+- Source-lock records, original checkpoint manifest and protocol amendment
+- Historical Step 67 verified script and original workstation audit logs
+- New `scripts/REPRODUCE_GITHUB_ANALYSIS.R` entry point adapted to the repository layout
 
-## Still required for the clean-session statistical reprocessing script
+## Run statistical reprocessing
 
-- `results/step55_statistical_analysis/seven_method_summary.csv`
-- `results/step55_statistical_analysis/primary_raac_vs_fixed_global.csv`
-- `results/step55_statistical_analysis/secondary_raac_comparisons.csv`
-- `results/step56_regime_reliability/regime_method_summary.csv`
-- Full `RELEASE_FILE_MANIFEST.csv` reconstruction for the current GitHub layout. The existing historical 30-file manifest refers to the workstation release and original Windows line endings and must **not** be used as a verified GitHub checksum manifest.
+From the GitHub repository root, with R and `data.table` installed:
 
-The original script currently expects to be run from the root of the **full original release**, where its manifest and dependencies exist. A fresh GitHub clone is not yet a validated standalone reproduction.
+```sh
+Rscript --vanilla scripts/REPRODUCE_GITHUB_ANALYSIS.R
+```
 
-## Still required for full simulator replication
+This regenerates and compares method, paired contrast and subgroup summaries against the uploaded references, with a numerical tolerance of `1e-10`. It writes evidence to `reproduction_outputs/` (ignored by Git).
 
-- A tested clean-session simulator entry point and verified runtime constants.
-- Direct reproduction of the published four-scenario verification workflow from a clean clone.
-- Software environment checks on a fresh machine.
-- Optional external archive containing all 800 original checkpoint RDS files. Their historical MD5 manifest is now on GitHub, but the archive is not.
+**The new GitHub-layout script has not been run here.** The historical Step 67 log verifies a successful workstation run using the original 30-file distribution, not a tested fresh GitHub clone. Run the command in a fresh clone and retain the output log before claiming the GitHub layout passes.
 
-## Audit cautions
+## Remains to be done
 
-- Uploaded plain-text files are normalized from the original Windows CRLF line endings to LF; their historical MD5 hashes therefore differ even when their content is equivalent.
-- The frozen binary configuration RDS was uploaded byte-for-byte.
-- A manifest records the original checkpoint filenames and hashes but does not prove the checkpoint files are downloadable.
-- The supplied `step52_manifest.csv` mentions a `benchmark_readiness.csv` that has **not** been supplied in this turn.
-- No manuscript or figure data is published in this GitHub repository.
+1. Execute the GitHub-layout script from an actual fresh checkout, confirm all checks pass and archive a new clean-session audit log.
+2. Provide a clean-clone simulator driver with source dependencies and verified ACI bounds, and independently rerun the four-scenario single-replication benchmark.
+3. Create a checksum manifest for the current public GitHub release (the historical 30-file manifest does **not** describe GitHub bytes).
+4. Optionally archive the 800 original checkpoint RDS files separately; only their MD5 manifest is on GitHub.
+5. Do not publish manuscript or figure artifacts here unless the author changes that instruction.
+
+The observed results are synthetic and make no external real-world or distribution-free conditional coverage claims.
